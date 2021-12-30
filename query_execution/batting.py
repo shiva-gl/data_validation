@@ -1,6 +1,6 @@
 import pandas as pd
 
-from utils.genric import make_directory
+from utils.genric import make_directory, read_sql_file
 from utils.read_json_file import read_json_file_to_dict
 
 
@@ -11,10 +11,10 @@ def batting_data(source_cursor, destination_cursor):
     match_ids = pd.read_sql(query, source_cursor)["Match_Id"]
     for math_id in match_ids:
         # reading and executing sql queries on source table
-        source_df = pd.read_sql(f'{read_json_file_to_dict()["source"]["batting"]} where Match_Id = \'{math_id}\'', source_cursor)
+        source_df = pd.read_sql(f'{read_sql_file("./query_resources/source/batting.sql")} where Match_Id = \'{math_id}\'', source_cursor)
 
         # reading and executing sql queries on destination table
-        destination_df = pd.read_sql(f'{read_json_file_to_dict()["destination"]["batting"]} where EX_Match_Id = \'{math_id}\'', destination_cursor)
+        destination_df = pd.read_sql(f'{read_sql_file("./query_resources/destination/batting.sql")} and EX_Match_Id = \'{math_id}\'', destination_cursor)
 
         column_sort = ["S_Bat_Order", "S_Runs", "S_Minutes", "S_Fours", "S_Sixes", "S_Balls", "S_Innings"]
         destination_df[column_sort] = destination_df[column_sort].apply(pd.to_numeric)

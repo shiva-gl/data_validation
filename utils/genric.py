@@ -13,3 +13,10 @@ def make_directory(path):
             os.makedirs(path)
     except Exception as error:
         print(error)
+
+
+def read_sql_file(query_file):
+    query = open(query_file, 'r')
+    red_query = query.read()
+    query.close()
+    return red_query

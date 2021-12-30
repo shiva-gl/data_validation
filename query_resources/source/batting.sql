@@ -1,0 +1,15 @@
+SELECT team_id    AS S_Team,
+       bat_order  AS S_Bat_Order,
+       player_id  AS S_Batter,
+       wkt_type   AS S_WicketType,
+       fielder    AS S_FielderName,
+       bowler     AS S_Bowler,
+       runs       AS S_Runs,
+       minutes    AS S_Minutes,
+       fours      AS S_Fours,
+       six        AS S_Sixes,
+       strikerate AS S_Strikerate,
+       balls      AS S_Balls,
+       innings    AS S_Innings,
+       match_id   AS EX_Match_Id
+FROM   bcci.clear.pft_bcci_batting

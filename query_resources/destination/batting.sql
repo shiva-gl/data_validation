@@ -1,0 +1,15 @@
+SELECT s_team,
+       s_bat_order,
+       s_batter,
+       s_wickettype,
+       s_fieldername,
+       s_bowler,
+       s_runs,
+       s_minutes,
+       s_fours,
+       s_sixes,
+       s_strikerate,
+       s_balls,
+       s_innings,
+       ex_match_id
+FROM   mediaarchive.dam_bcciucbattingextn
