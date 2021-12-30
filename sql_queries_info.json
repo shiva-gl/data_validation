@@ -1,0 +1,11 @@
+{
+  "source" : {
+    "batting": "select TEAM_Id as S_Team ,BAT_ORDER as S_Bat_Order ,PLAYER_ID as S_Batter, WKT_TYPE as S_WicketType, FIELDER as S_FielderName, BOWLER as S_Bowler,RUNS as S_Runs, Minutes as S_Minutes,Fours as S_Fours,Six as S_Sixes,Strikerate as S_Strikerate,Balls as S_Balls,Innings as S_Innings, Match_Id as EX_Match_Id  from BCCI.clear.PFT_BCCI_BATTING",
+    "bowling": ""
+  },
+
+  "destination" : {
+    "batting": "Select S_Team,S_Bat_Order,S_Batter,S_WicketType,S_FielderName,S_Bowler,S_Runs,S_Minutes,S_Fours,S_Sixes,S_Strikerate,S_Balls,S_Innings,EX_Match_Id from mediaarchive.Dam_BCCIUCBattingExtn"
+  }
+
+}
